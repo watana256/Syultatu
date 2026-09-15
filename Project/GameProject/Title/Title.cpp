@@ -12,7 +12,7 @@ void Title::Update()
 {
 	if (m_cnt++ > 60 && PUSH(CInput::eButton5)) {
 		Base::KillAll();
-		//Base::Add(new Game());
+	    new Game();
 	}
 }
 
