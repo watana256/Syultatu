@@ -16,5 +16,6 @@ void Title::Update()
 
 void Title::Draw()
 {
-
+	m_img.SetPos(0, 0);
+	m_img.Draw();
 }

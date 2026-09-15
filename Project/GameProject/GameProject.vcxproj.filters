@@ -20,6 +20,9 @@
     <ClInclude Include="Result\Result.h">
       <Filter>Result</Filter>
     </ClInclude>
+    <ClInclude Include="Game\Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -40,6 +43,9 @@
     </ClCompile>
     <ClCompile Include="Result\Result.cpp">
       <Filter>Result</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Game.cpp">
+      <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
