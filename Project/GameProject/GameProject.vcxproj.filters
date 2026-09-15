@@ -5,11 +5,41 @@
     <ClInclude Include="Base\Base.h">
       <Filter>Base</Filter>
     </ClInclude>
+    <ClInclude Include="Game\Enemy.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Player.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Score.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Title\Title.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\Result.h">
+      <Filter>Result</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Base\Base.cpp">
       <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Enemy.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Player.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Score.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Title\Title.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\Result.cpp">
+      <Filter>Result</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -18,6 +48,12 @@
     </Filter>
     <Filter Include="Game">
       <UniqueIdentifier>{e7b02635-49e7-4ea7-8548-353c5f94c61d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Title">
+      <UniqueIdentifier>{158b1938-d8c3-43da-8282-0ff6bff90072}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Result">
+      <UniqueIdentifier>{574dbd87-b3c3-40b1-b7c7-6dd4b4c908b8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

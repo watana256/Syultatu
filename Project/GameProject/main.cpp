@@ -84,7 +84,7 @@ void Init(void)
 	//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ŒÄ‚Î‚ê‚é
 	//-----------------------------------------------------
 	
-
+	ADD_RESOURCE("Player",CImage::CreateImage("Image/Player.png"));
 
 
 
