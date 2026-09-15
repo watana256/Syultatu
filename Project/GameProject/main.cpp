@@ -85,6 +85,7 @@ void Init(void)
 	//-----------------------------------------------------
 	
 	ADD_RESOURCE("Player",CImage::CreateImage("Image/Player.png"));
+	ADD_RESOURCE("Enemy",CImage::CreateImage("Image/Enemy.png"));
 
 
 
