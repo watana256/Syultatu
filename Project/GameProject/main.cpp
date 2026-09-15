@@ -1,5 +1,6 @@
 #include "Base/Base.h"
 #include "Game/Player.h"
+#include "Game/Enemy.h"
 
 void MainLoop(void) {
 	//--------------------------------------------------------------
@@ -90,6 +91,7 @@ void Init(void)
 
 
 	new Player(CVector2D(770, 800));
+	new Enemy(CVector2D(770, 800));
 
 
 
