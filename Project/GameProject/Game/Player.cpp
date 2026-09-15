@@ -1,6 +1,29 @@
 #include "Player.h"
 
 
+static TexAnim _Right[] =
+{
+    { 18,3 },
+    { 19,3 },
+};
+static TexAnim _left[] =
+{
+    { 18,3 },
+    { 19,3 },
+};
+static TexAnim _stillness[] =
+{
+    { 18,3 },
+    { 19,3 },
+};
+
+TexAnimData Player::_anim_data[] =
+{
+    ANIMDATA(_Right),
+    ANIMDATA(_left),
+    ANIMDATA(_stillness)
+};
+
 Player::Player(const CVector2D& pos) :Base(eType_Player)
 {
 	m_img = COPY_RESOURCE("Player", CImage);
