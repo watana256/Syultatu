@@ -20,20 +20,21 @@ Enemy::Enemy(const CVector2D& pos,bool flip) :Base(eType_Enemy) {
 }
 void Enemy::Update()
 {
-    const int move_speed = 32;
+    const int move_speed = 96;
     m_cnt++;
     if (m_cnt >= 30) {
         m_pos.x -= move_speed;
         m_cnt = 0;
     }
-    if (m_pos.y > 1080) {
+    if (m_pos.x <= -64) {
         SetKill();
     }
 }
 void Enemy::Draw()
 {
-    m_img.SetPos(m_pos);
     m_img.SetRect(128, 0, 192, 64);
+    m_img.SetPos(GetScreenPos(m_pos));
+    m_img.SetFlipH(m_flip);
     m_img.Draw();
     Utility::DrawCircle(m_pos, m_rad, CVector4D(0, 0, 1, 0.5));
 }
