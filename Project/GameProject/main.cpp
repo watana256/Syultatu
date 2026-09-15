@@ -88,7 +88,7 @@ void Init(void)
 	//------------------------•½ŽR-------------------------
 	
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
-	new Title();
+	//new Title();
 
 
 
