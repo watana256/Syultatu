@@ -1,4 +1,5 @@
 #include "Base/Base.h"
+#include "Game/Player.h"
 
 void MainLoop(void) {
 	//--------------------------------------------------------------
@@ -87,6 +88,9 @@ void Init(void)
 	ADD_RESOURCE("Player",CImage::CreateImage("Image/Player.png"));
 	ADD_RESOURCE("Enemy",CImage::CreateImage("Image/Enemy.png"));
 
+
+
+	new Player(CVector2D(770, 800));
 
 
 
