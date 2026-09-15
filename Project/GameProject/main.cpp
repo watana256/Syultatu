@@ -86,9 +86,9 @@ void Init(void)
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
 	//------------------------平山-------------------------
-	new Title();
+	
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
-
+	new Title();
 
 
 
