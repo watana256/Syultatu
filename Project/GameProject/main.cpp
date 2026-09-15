@@ -1,5 +1,6 @@
 #include "Base/Base.h"
 #include "Game/Player.h"
+#include "Game/Enemy.h"
 
 void MainLoop(void) {
 	//--------------------------------------------------------------
@@ -79,7 +80,6 @@ void Init(void)
 	CSound::GetInstance();
 	CLight::Init();
 
-
 	//-----------------------------------------------------
 	//‰Šú‰»‚Ì–½—ß‚ğ‘‚­
 	//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ŒÄ‚Î‚ê‚é
@@ -91,6 +91,7 @@ void Init(void)
 
 
 	new Player(CVector2D(770, 800));
+	new Enemy(CVector2D(770, 800));
 
 
 
