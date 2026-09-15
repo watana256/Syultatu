@@ -91,8 +91,7 @@ void Init(void)
 
 
 	new Player(CVector2D(770, 800));
-	new Enemy(CVector2D(770, 800));
-
+	new Enemy(CVector2D(770, 800),true);
 
 
 
