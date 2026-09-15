@@ -3,18 +3,17 @@
 
 static TexAnim _Right[] =
 {
-    { 18,3 },
-    { 19,3 },
+    { 0,2 },
+    { 1,2 }
 };
 static TexAnim _left[] =
 {
-    { 18,3 },
-    { 19,3 },
+    { 3,2 },
+    { 4,2 }
 };
 static TexAnim _stillness[] =
 {
-    { 18,3 },
-    { 19,3 },
+    { 2,2 }
 };
 
 TexAnimData Player::_anim_data[] =
@@ -28,6 +27,9 @@ Player::Player(const CVector2D& pos) :Base(eType_Player)
 {
 	m_img = COPY_RESOURCE("Player", CImage);
     m_pos = pos;
+    m_img.SetSize(80, 80);
+    m_img.SetCenter(40, 40);
+    m_img.ChangeAnimation(eStae_stillness);
 }
 void Player::Update()
 {
@@ -42,6 +44,7 @@ void Player::Update()
         //new Bullet(m_pos);
     }
     m_img.UpdateAnimation();
+
 }
 void Player::Draw()
 {
