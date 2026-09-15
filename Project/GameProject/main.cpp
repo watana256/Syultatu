@@ -93,7 +93,7 @@ void Init(void)
 
 	new Player(CVector2D(770, 800));
 	for(int i=0;i<10;i++)
-	new Enemy(CVector2D(770, 15+(-32*i)),true);
+	new Enemy(CVector2D(770, 15+(32*i)),true);
 
 
 
