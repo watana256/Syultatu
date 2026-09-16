@@ -26,7 +26,7 @@ void HP::Draw()
 		if (Player* f = dynamic_cast<Player*>(player)) {
 			int hp = f->Gethp(); int maxhp = f->Getmaxhp();
 			int i = hp / (float)maxhp * 8;
-			m_img[i].SetPos(1450, 0);
+			m_img[i].SetPos(-90, 10);
 			m_img[i].SetSize(500, 150);
 			m_img[i].Draw();
 		}
