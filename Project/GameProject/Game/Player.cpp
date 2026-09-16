@@ -83,15 +83,20 @@ void Player::Draw()
 }
 void Player::StateStillness()
 {
-    if (PUSH(CInput::eButton1)) {
+    const int move_speed = 4;
+
+    if (PUSH(CInput::eButton1)) 
+    {
         new Bullet(m_pos);
     }
-    const int move_speed = 4;
-    if (HOLD(CInput::eUp)) {
+    if 
+        (HOLD(CInput::eUp)) 
+    {
         m_pos.y -= move_speed;
         m_state = eState_Right;
     }
-    if (HOLD(CInput::eDown)) {
+    else if
+        (HOLD(CInput::eDown)) {
         m_pos.y += move_speed;
         m_state = eState_left;
     }
