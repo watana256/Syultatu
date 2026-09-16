@@ -34,5 +34,5 @@ void Enemy::Draw()
     m_img.SetPos(GetScreenPos(m_pos));
     m_img.SetFlipH(m_flip);
     m_img.Draw();
-    Utility::DrawCircle(m_pos, m_rad, CVector4D(0, 0, 1, 0.5));
+    Utility::DrawCircle(m_pos, m_rad, CVector4D(5, 0, 0, 0.5));
 }
