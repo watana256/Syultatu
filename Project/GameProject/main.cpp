@@ -172,7 +172,7 @@ void Init(void)
 	//-----------------------------------938-----------------------------------------------------------
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png"));
 	for (int i = 0; i < 10; i++)
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 25; j++)
 		new Enemy(CVector2D(1950+(80*j), 160 + (80 * i)), true);
 
 
