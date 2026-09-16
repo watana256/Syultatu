@@ -13,7 +13,6 @@ Enemy::Enemy(const CVector2D& pos,bool flip) :Base(eType_Enemy) {
     m_img.Load("Image/Enemy.png");
     m_pos = pos;
     m_flip = flip;
-    m_cnt = 0;  
     m_rad = 25;
     m_img.SetSize(50, 50);
     m_img.SetCenter(25, 25);
