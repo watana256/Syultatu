@@ -1,5 +1,5 @@
 #include "Player.h"
-
+#include "Bullet.h"
 
 static TexAnim _Right[] =
 {
@@ -29,6 +29,7 @@ Player::Player(const CVector2D& pos) :Base(eType_Player)
     m_pos_old = m_pos = pos;
     m_img.SetSize(80, 80);
     m_img.SetCenter(40, 40);
+    m_rad = 30;
     m_img.ChangeAnimation(eState_Stillness);
 }
 void Player::Update()
@@ -64,7 +65,9 @@ void Player::Draw()
 {
     m_img.SetPos(m_pos);
 	m_img.Draw();
-	//DrawRect();
+	DrawRect();
+    m_img.SetRect(128, 0, 192, 64);
+    Utility::DrawCircle(m_pos, m_rad, CVector4D(5, 0, 0, 0.5));
 }
 void Player::StateStillness()
 {
@@ -78,7 +81,7 @@ void Player::StateStillness()
         m_state = eState_left;
     }
     if (PUSH(CInput::eButton1)) {
-        //new Bullet(m_pos);
+        new Bullet(m_pos);
     }
     else {
         m_img.ChangeAnimation(eAnimStillness);
