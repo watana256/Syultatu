@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "Player.h"
 static TexAnim _idle[] = {
     { 0,2 },
     { 1,2 },
@@ -27,6 +28,22 @@ void Enemy::Update()
         m_pos.x -= move_speed;
     }
 }
+/*void Enemy::Collision(Base* b)
+{
+    switch (b->m_type)
+    {
+    case eType_Player:
+
+        if (Player* e = dynamic_cast<Player*>(b)) {
+            if (Base::CollisionRect(this, b)) {
+                e->TakeDamage(10);
+                SetKill();
+
+            }
+        }
+        break;
+    }
+}*/
 void Enemy::Draw()
 {
     m_img.SetRect(128, 0, 192, 64);

@@ -176,7 +176,7 @@ void Init(void)
 
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 25; j++) {
-			new Enemy(CVector2D(1900 + (80 * j), 400+(32*i)), true);
+			new Enemy(CVector2D(1900 + (80 * j), 400 + (32 * i)), true);
 		}
 	}
 
