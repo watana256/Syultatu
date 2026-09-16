@@ -16,7 +16,6 @@ private:
 public:
     Enemy(const CVector2D& pos,bool flip);
     CImage m_img;
-    int m_cnt;
     bool m_flip;
     void Update();
     void Draw();
