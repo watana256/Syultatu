@@ -83,7 +83,7 @@ void Player::Draw()
 }
 void Player::StateStillness()
 {
-    const int move_speed = 4;
+    const int move_speed = 8;
 
     if (PUSH(CInput::eButton1)) 
     {

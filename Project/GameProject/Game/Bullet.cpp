@@ -11,7 +11,7 @@ Bullet::Bullet(const CVector2D& pos) :Base(eType_Bullet)
 }
 void Bullet::Update()
 {
-    const int move_speed = 4;
+    const int move_speed = 16;
     m_pos.x += move_speed;
     if (m_pos.y < 0) {
         SetKill();
@@ -21,7 +21,7 @@ void Bullet::Draw()
 {
     m_img.SetPos(m_pos);
     m_img.Draw();
-    Utility::DrawCircle(m_pos, m_rad, CVector4D(1, 0, 0, 0.5));
+    Utility::DrawCircle(m_pos, m_rad, CVector4D(0, 5, 0, 0.5));
 }
 void Bullet::Collision(Base* b)
 {
