@@ -5,13 +5,21 @@ class Player : public Base
 {
 private:
 	enum {
-		eStae_Right,
-		eStae_left,
-		eStae_stillness
+		eState_Right,
+		eState_left,
+		eState_Stillness
 	};
+	int m_state;
 	CImage m_img;
 
-	void StateMove();
+	enum {
+		eAnimRight,
+		eAnimleft,
+		eAnimStillness,
+	};
+	void StateStillness();
+	void StateRight();
+	void Stateleft();
 
 public:
 	Player(const CVector2D& pos);

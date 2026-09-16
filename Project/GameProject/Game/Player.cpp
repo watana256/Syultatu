@@ -26,12 +26,47 @@ TexAnimData Player::_anim_data[] =
 Player::Player(const CVector2D& pos) :Base(eType_Player)
 {
 	m_img = COPY_RESOURCE("Player", CImage);
-    m_pos = pos;
+    m_pos_old = m_pos = pos;
     m_img.SetSize(80, 80);
     m_img.SetCenter(40, 40);
-    m_img.ChangeAnimation(eStae_stillness);
+    m_img.ChangeAnimation(eState_Stillness);
 }
 void Player::Update()
+{
+    m_img.UpdateAnimation();
+    m_pos_old = m_pos;
+    switch (m_state) {
+    case eState_Stillness:
+            StateStillness();
+            break;
+    case eState_Right:
+        StateRight();
+            break;
+    case eState_left:
+        Stateleft();
+        break;
+
+    }
+    /*const int move_speed = 4;
+    if (HOLD(CInput::eUp)) {
+        m_pos.y -= move_speed;
+    }
+    if (HOLD(CInput::eDown)) {
+        m_pos.y += move_speed;
+    }
+    if (PUSH(CInput::eButton1)) {
+        //new Bullet(m_pos);
+    }*/
+    
+
+}
+void Player::Draw()
+{
+    m_img.SetPos(m_pos);
+	m_img.Draw();
+	//DrawRect();
+}
+void Player::StateStillness()
 {
     const int move_speed = 4;
     if (HOLD(CInput::eUp)) {
@@ -43,17 +78,20 @@ void Player::Update()
     if (PUSH(CInput::eButton1)) {
         //new Bullet(m_pos);
     }
-    m_img.UpdateAnimation();
-
 }
-void Player::Draw()
+void Player::StateRight() 
 {
-    m_img.SetPos(m_pos);
-	m_img.Draw();
-	//DrawRect();
+    m_img.ChangeAnimation(eAnimRight, false);
+    if (m_img.CheckAnimationEnd()) {
+        m_img.ChangeAnimation(eAnimRight, false);
+        m_state = eState_Stillness;
+    }
 }
-
-void Player::StateMove() 
+void Player::Stateleft()
 {
-
+    m_img.ChangeAnimation(eAnimleft, false);
+    if (m_img.CheckAnimationEnd()) {
+        m_img.ChangeAnimation(eAnimleft, false);
+        m_state = eState_Stillness;
+    }
 }
