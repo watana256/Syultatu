@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Bullet.h"
+#include "Enemy.h"
 
 static TexAnim _Right[] =
 {
@@ -33,6 +34,7 @@ Player::Player(const CVector2D& pos) :Base(eType_Player)
     m_img.ChangeAnimation(eState_Stillness);
     m_hp = 100;
 }
+
 
 void Player::TakeDamage(int damage)
 {
