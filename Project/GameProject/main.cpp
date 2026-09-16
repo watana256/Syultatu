@@ -2,6 +2,7 @@
 #include "Game/Player.h"
 #include "Game/Enemy.h"
 #include "Title/Title.h"
+#include "Game/HP.h"
 
 void MainLoop(void) {
 	//--------------------------------------------------------------
@@ -129,18 +130,17 @@ void Init(void)
 	//-----------------------“n•Ó------------------------------------------------------
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png",Player::_anim_data,64,64));
 	new Player(CVector2D(72, 800));
-
-
-
-
-
-
-
-
-
-
-
-
+	ADD_RESOURCE("hp10", CImage::CreateImage("Image/hp10.png"));
+	ADD_RESOURCE("hp20", CImage::CreateImage("Image/hp20.png"));
+	ADD_RESOURCE("hp30", CImage::CreateImage("Image/hp30.png"));
+	ADD_RESOURCE("hp40", CImage::CreateImage("Image/hp40.png"));
+	ADD_RESOURCE("hp50", CImage::CreateImage("Image/hp50.png"));
+	ADD_RESOURCE("hp60", CImage::CreateImage("Image/hp60.png"));
+	ADD_RESOURCE("hp70", CImage::CreateImage("Image/hp70.png"));
+	ADD_RESOURCE("hp80", CImage::CreateImage("Image/hp80.png"));
+	ADD_RESOURCE("hp90", CImage::CreateImage("Image/hp90.png"));
+	ADD_RESOURCE("hp100", CImage::CreateImage("Image/hp100.png"));
+	new HP();
 
 
 

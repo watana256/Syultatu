@@ -31,7 +31,19 @@ Player::Player(const CVector2D& pos) :Base(eType_Player)
     m_img.SetCenter(40, 40);
     m_rad = 30;
     m_img.ChangeAnimation(eState_Stillness);
+    m_hp = 100;
 }
+
+void Player::TakeDamage(int damage)
+{
+    //HPå∏è≠ÅBâ∫å¿0
+    m_hp = max(m_hp - damage, 0);
+    if (m_hp <= 0) {
+        SetKill();
+    }
+}
+
+
 void Player::Update()
 {
     m_img.UpdateAnimation();
