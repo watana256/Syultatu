@@ -71,12 +71,17 @@ void Player::StateStillness()
     const int move_speed = 4;
     if (HOLD(CInput::eUp)) {
         m_pos.y -= move_speed;
+        m_state = eState_Right;
     }
     if (HOLD(CInput::eDown)) {
         m_pos.y += move_speed;
+        m_state = eState_left;
     }
     if (PUSH(CInput::eButton1)) {
         //new Bullet(m_pos);
+    }
+    else {
+        m_img.ChangeAnimation(eAnimStillness);
     }
 }
 void Player::StateRight() 
