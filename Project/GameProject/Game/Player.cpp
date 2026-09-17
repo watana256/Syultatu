@@ -62,18 +62,6 @@ void Player::Update()
         break;
 
     }
-    /*const int move_speed = 4;
-    if (HOLD(CInput::eUp)) {
-        m_pos.y -= move_speed;
-    }
-    if (HOLD(CInput::eDown)) {
-        m_pos.y += move_speed;
-    }
-    if (PUSH(CInput::eButton1)) {
-        //new Bullet(m_pos);
-    }*/
-    
-
 }
 void Player::Draw()
 {
@@ -82,6 +70,23 @@ void Player::Draw()
 	DrawRect();
     m_img.SetRect(128, 0, 192, 64);
     Utility::DrawCircle(m_pos, m_rad, CVector4D(0, 0, 1, 0.5));
+}
+void Player::Collision(Base* b)
+{
+    switch (b->m_type)
+    {
+    case eType_Player:
+
+        if (Player* e = dynamic_cast<Player*>(b)) {
+            if (Base::CollisionRect(this, b)) {
+                e->TakeDamage(10);
+                SetKill();
+                m_attack = false;
+
+            }
+        }
+        break;
+    }
 }
 void Player::StateStillness()
 {
