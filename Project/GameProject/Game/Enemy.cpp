@@ -33,6 +33,10 @@ void Enemy::Update()
      case 2:
          StateMove2();
          break;
+     case 22:
+         StateMove22();
+         break;
+
      case 3:
          StateMove3();
          break;
@@ -72,20 +76,39 @@ void Enemy::StateMove1() {
 
 void Enemy::StateMove2() {
     move_speed_y = 0;
-    int i = 0;
+    move_speed_x = 2;
     if (m_pos.x <= -64) {
         SetKill();
     }
     else {
 
             if (m_pos.x <= 1200) {
-                move_speed_x = -5;
+                move_speed_y= 4;
+                move_speed_x= 7;
             }
 
             m_pos.y -= move_speed_y;
             m_pos.x -= move_speed_x;
         }
     }
+
+void Enemy::StateMove22() {
+    move_speed_y = 0;
+    move_speed_x = 2;
+    if (m_pos.x <= -64) {
+        SetKill();
+    }
+    else {
+
+        if (m_pos.x <= 1200) {
+            move_speed_y = -4;
+            move_speed_x = 7;
+        }
+
+        m_pos.y -= move_speed_y;
+        m_pos.x -= move_speed_x;
+    }
+}
 
 void Enemy::StateMove3() {
     move_speed_y = 2;
