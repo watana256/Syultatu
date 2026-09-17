@@ -2,6 +2,8 @@
 #include "Bullet.h"
 #include "Enemy.h"
 
+#define MUTEKI 1.0f
+
 static TexAnim _Right[] =
 {
     { 0,2 },
@@ -24,7 +26,9 @@ TexAnimData Player::_anim_data[] =
     ANIMDATA(_stillness)
 };
 
-Player::Player(const CVector2D& pos) :Base(eType_Player)
+Player::Player(const CVector2D& pos) 
+    :Base(eType_Player)
+    , m_muteki_cnt(0)
 {
 	m_img = COPY_RESOURCE("Player", CImage);
     m_pos_old = m_pos = pos;
@@ -38,11 +42,14 @@ Player::Player(const CVector2D& pos) :Base(eType_Player)
 
 void Player::TakeDamage(int damage)
 {
+    if (m_muteki_cnt > 0) return;
     //HPå∏è≠ÅBâ∫å¿0
     m_hp = max(m_hp - damage, 0);
+    m_muteki_cnt = MUTEKI;
     if (m_hp <= 0) {
         SetKill();
     }
+
 }
 
 
@@ -62,6 +69,10 @@ void Player::Update()
         break;
 
     }
+    if (m_muteki_cnt > 0.0f)
+    {
+        m_muteki_cnt -= CFPS::GetDeltaTime();
+    }
 }
 void Player::Draw()
 {
@@ -71,23 +82,7 @@ void Player::Draw()
     m_img.SetRect(128, 0, 192, 64);
     Utility::DrawCircle(m_pos, m_rad, CVector4D(0, 0, 1, 0.5));
 }
-void Player::Collision(Base* b)
-{
-    switch (b->m_type)
-    {
-    case eType_Player:
 
-        if (Player* e = dynamic_cast<Player*>(b)) {
-            if (Base::CollisionRect(this, b)) {
-                e->TakeDamage(10);
-                SetKill();
-                m_attack = false;
-
-            }
-        }
-        break;
-    }
-}
 void Player::StateStillness()
 {
     const int move_speed = 8;
