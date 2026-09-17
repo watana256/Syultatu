@@ -5,6 +5,7 @@ class Game : public Base {
 private:
 	CImage m_BackGround;
 	int m_cnt;
+	int m_score;
 public:
 	Game();
 	~Game();

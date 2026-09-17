@@ -1,5 +1,6 @@
 #pragma once
 enum {
+    eType_Scene,
     eType_Field,
     eType_Map,
     eType_Door,
@@ -11,7 +12,7 @@ enum {
     eType_Enemy_Attack,
     eType_Effect,
     eType_UI,
-    eType_Scene,eType_Bullet
+    eType_Bullet
 };
 
 //èdóÕâ¡ë¨ìx

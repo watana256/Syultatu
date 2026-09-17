@@ -96,11 +96,11 @@ void Init(void)
 	ADD_RESOURCE("Result", CImage::CreateImage("Image/Result.png"));
 	//new Result();
 
-	//new Game();
+	
 	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/BackGround.png"));
 
-
-
+	ADD_RESOURCE("Score", CImage::CreateImage("Image/Score.png"));
+	new Game();
 
 
 
@@ -178,14 +178,30 @@ void Init(void)
 
 	// 縦　行　　横　列
 
-	for (int i = 0; i < 10; i++) {
-		for (int j = 0; j < 10; j++) {
-			new Enemy(CVector2D(1900 + (80 * j), 400 + (32 * i)), true ,2);
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 7; j++) {
+			int offsetY = rand() % 300;
+			new Enemy(CVector2D(1900 + (80 * j), 400 + (32 * i) + offsetY), true ,0);
 		}
 	}
-
-
-
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 7; j++) {
+			int offsetY = rand() % 800;
+			new Enemy(CVector2D(1900 + (80 * j), 300 + (32 * i) + offsetY), true, 1);
+		}
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 7; j++) {
+			int offsetY = rand() % 800;
+			new Enemy(CVector2D(1900 + (80 * j), 700 + (32 * i) + offsetY), true, 2);
+		}
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 7; j++) {
+			int offsetY = rand() % 500;
+			new Enemy(CVector2D(900 + (80 * j), -1000 + (32 * i) + offsetY), true, 3);
+		}
+	}
 
 
 

@@ -11,16 +11,16 @@ private:
     enum {
         eState_Idle,
     };
-    int Movetype;
+    int m_movetype;
     void StateMove0();
     void StateMove1();
     void StateMove2();
     void StateMove3();
 public:
-    Enemy(const CVector2D& pos, bool flip,int Movetype);//,int pattern);
+    Enemy(const CVector2D& pos, bool flip,int Movetype);
     CImage m_img;
-    float move_speed_y = 10.0f;
-
+    float move_speed_y = 4.0f;
+    float move_speed_x = 2.0f;
 
     bool m_flip;
     void Update();
