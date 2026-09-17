@@ -57,7 +57,6 @@ void Enemy::Collision(Base* b)
                 e->TakeDamage(10);
                 SetKill();
                 //m_attack = false;
-
             }
         }
         break;
