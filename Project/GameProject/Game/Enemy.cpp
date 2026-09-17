@@ -47,12 +47,18 @@ void Enemy::Update()
 
 void Enemy::Collision(Base* b)
 {
-    //敵がプレイヤーに攻撃したときにプレイヤーにダメージを与えるプログラムを作れ
     switch (b->m_type)
     {
     case eType_Player:
-        if (Player* e = dynamic_cast<Player*>(b)) {
-            if (Base::CollisionRect(this, b)) {
+        // b を Player 型にキャスト
+        if (Player* p = dynamic_cast<Player*>(b)) {
+            // 矩形判定（または Base::CollisionCircle(this, b)）で接触判定
+            if (Base::CollisionCircle(this, b)) {
+
+                // 1. プレイヤーにダメージを与える（HP制の場合）
+                p->TakeDamage(10);
+
+                // 2. 敵自身を消去する
                 SetKill();
             }
         }
