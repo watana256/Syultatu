@@ -38,6 +38,9 @@ void Enemy::Update()
          break;
  }
 }
+
+// «“G‚Ì“®‚«‚Í‚±‚±‚©‚ç
+
 void Enemy::StateMove0() {
     if (m_pos.x <= -64) {
         SetKill();
@@ -60,8 +63,8 @@ void Enemy::StateMove1() {
             m_pos.y = 1000;
             move_speed_y *= -1;
         }
-        else if (m_pos.y <= 64) {
-            m_pos.y = 64;
+        else if (m_pos.y <= 150) {
+            m_pos.y = 150;
             move_speed_y *= -1;
         }
     }
@@ -95,6 +98,9 @@ void Enemy::StateMove3() {
         m_vec.y += move_speed_y;
     }
 }
+
+// “G‚Ì“®‚«‚±‚±‚Ü‚Å
+
 void Enemy::Collision(Base* b)
 {
     switch (b->m_type)
