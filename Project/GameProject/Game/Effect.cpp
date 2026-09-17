@@ -13,7 +13,7 @@ TexAnimData Effect::_anim_data[] = {
 
 Effect::Effect(const CVector2D& pos) :Base(eType_Effect)
 {
-    m_img.Load("Image/Effect.png", _anim_data, 64, 64);
+    m_img.Load("Image/Effect.png", _anim_data, 50, 50);
     m_pos = pos;
     m_img.SetSize(128, 128);
     m_img.SetCenter(64, 64);

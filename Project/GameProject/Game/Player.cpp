@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Bullet.h"
 #include "Enemy.h"
+#include "Effect.h"
 
 #define MUTEKI 1.0f
 
@@ -46,6 +47,7 @@ void Player::TakeDamage(int damage)
     m_muteki_cnt = MUTEKI;
     if (m_hp <= 0) {
         SetKill();
+        new Effect(m_pos);
     }
 
 }
