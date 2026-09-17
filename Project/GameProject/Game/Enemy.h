@@ -14,9 +14,13 @@ private:
     void StateIdle();
 
 public:
-    Enemy(const CVector2D& pos,bool flip);
+    Enemy(const CVector2D& pos, bool flip);//,int pattern);
     CImage m_img;
+    float move_speed_y = 4.0f;
+
+
     bool m_flip;
+    void Movepattern();
     void Update();
     void Draw();
 
