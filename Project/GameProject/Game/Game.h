@@ -8,4 +8,5 @@ public:
 	Game();
 	~Game();
 	void Update();
+	int m_step;
 };

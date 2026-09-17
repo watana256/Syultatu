@@ -91,12 +91,12 @@ void Init(void)
 	//------------------------•½ŽR-------------------------
 	
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
-	//new Title();
+	new Title();
 
 	ADD_RESOURCE("Result", CImage::CreateImage("Image/Result.png"));
 	//new Result();
 
-	new Game();
+	//new Game();
 
 
 
