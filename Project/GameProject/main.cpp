@@ -91,16 +91,12 @@ void Init(void)
 	//------------------------平山-------------------------
 	
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
-	//new Title();
-
 	ADD_RESOURCE("Result", CImage::CreateImage("Image/Result.png"));
-	//new Result();
-
-	
 	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/BackGround.png"));
-
 	ADD_RESOURCE("Score", CImage::CreateImage("Image/Score.png"));
-	new Game();
+	//new Game();
+	//new Result();
+	new Title();
 
 
 
@@ -133,7 +129,6 @@ void Init(void)
 
 	//-----------------------渡辺------------------------------------------------------
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png",Player::_anim_data,64,64));
-	new Player(CVector2D(72, 800));
 	ADD_RESOURCE("hp10", CImage::CreateImage("Image/hp10.png"));
 	ADD_RESOURCE("hp20", CImage::CreateImage("Image/hp20.png"));
 	ADD_RESOURCE("hp30", CImage::CreateImage("Image/hp30.png"));
@@ -144,8 +139,13 @@ void Init(void)
 	ADD_RESOURCE("hp80", CImage::CreateImage("Image/hp80.png"));
 	ADD_RESOURCE("hp90", CImage::CreateImage("Image/hp90.png"));
 	ADD_RESOURCE("hp100", CImage::CreateImage("Image/hp100.png"));
+
 	new HP();
 	ADD_RESOURCE("Effect", CImage::CreateImage("Image/Effect.png", Effect::_anim_data, 64, 64));
+
+	
+
+
 
 
 
@@ -176,32 +176,7 @@ void Init(void)
 	//-----------------------------------938-----------------------------------------------------------
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png"));
 
-	// 縦　行　　横　列
-
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 7; j++) {
-			int offsetY = rand() % 300;
-			new Enemy(CVector2D(1900 + (80 * j), 400 + (32 * i) + offsetY), true ,0);
-		}
-	}
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 7; j++) {
-			int offsetY = rand() % 800;
-			new Enemy(CVector2D(1900 + (80 * j), 300 + (32 * i) + offsetY), true, 1);
-		}
-	}
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 7; j++) {
-			int offsetY = rand() % 800;
-			new Enemy(CVector2D(1900 + (80 * j), 700 + (32 * i) + offsetY), true, 2);
-		}
-	}
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 7; j++) {
-			int offsetY = rand() % 500;
-			new Enemy(CVector2D(900 + (80 * j), -1000 + (32 * i) + offsetY), true, 3);
-		}
-	}
+	
 
 
 
