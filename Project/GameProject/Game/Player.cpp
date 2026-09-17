@@ -97,21 +97,17 @@ void Player::StateStillness()
     {
         new Bullet(m_pos);
     }
-    if 
-        (HOLD(CInput::eUp)) 
+    if (HOLD(CInput::eUp)) 
     {
         m_pos.y -= move_speed;
         Animu = eAnimRight;
     }
-    else if
-        (HOLD(CInput::eDown)) {
+    else if (HOLD(CInput::eDown)) 
+    {
         m_pos.y += move_speed;
         Animu = eAnimleft;
     }
-    
-    {
-        m_img.ChangeAnimation(Animu);
-    }
+    m_img.ChangeAnimation(Animu);
 }
 void Player::StateRight() 
 {
