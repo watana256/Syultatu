@@ -13,7 +13,7 @@ void Bullet::Update()
 {
     const int move_speed = 16;
     m_pos.x += move_speed;
-    if (m_pos.y < 0) {
+    if (m_pos.x > 1900) {
         SetKill();
     }
 }

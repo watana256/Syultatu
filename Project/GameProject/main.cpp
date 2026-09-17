@@ -175,7 +175,7 @@ void Init(void)
 	// 縦　行　　横　列
 
 	for (int i = 0; i < 10; i++) {
-		for (int j = 0; j < 25; j++) {
+		for (int j = 0; j < 10; j++) {
 			new Enemy(CVector2D(1900 + (80 * j), 400 + (32 * i)), true);
 		}
 	}
