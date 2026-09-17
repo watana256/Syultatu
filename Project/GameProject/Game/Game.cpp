@@ -27,8 +27,13 @@ void Game::Update()
 
 	}
 				
-	if (/*m_cnt++ > 60 &&*/ PUSH(CInput::eButton5)) {
+	/*if (m_cnt++ > 60 && PUSH(CInput::eButton5)) {
  		Base::KillAll();
 		new Result();
-	}
+	}*/
+}
+
+void Game::Draw()
+{
+
 }
