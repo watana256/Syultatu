@@ -24,7 +24,7 @@ void Enemy::Movepattern()
 }
 void Enemy::Update()
 {
-    const int move_speed = 5;
+    const int move_speed = 2;
     if (m_pos.x <= -64) {
         SetKill();
     }
