@@ -18,16 +18,35 @@ Enemy::Enemy(const CVector2D& pos,bool flip) :Base(eType_Enemy) {
     m_img.SetSize(50, 50);
     m_img.SetCenter(25, 25);
 }
+void Enemy::Movepattern()
+{
+
+}
 void Enemy::Update()
 {
-    const int move_speed = 6;
+    const int move_speed = 5;
     if (m_pos.x <= -64) {
         SetKill();
     }
     else {
+
+
+    
         m_pos.x -= move_speed;
+        m_pos.y += move_speed_y;
+
+        
+        if (m_pos.y >= 1000) {
+            m_pos.y = 1000;
+            move_speed_y *= -1;
+        }
+        else if (m_pos.y <= 64) {
+            m_pos.y = 64;
+            move_speed_y *= -1;
+        }
     }
 }
+
 void Enemy::Draw()
 {
     m_img.SetRect(128, 0, 192, 64);
