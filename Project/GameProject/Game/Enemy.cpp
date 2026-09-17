@@ -10,7 +10,7 @@ static TexAnim _idle[] = {
 TexAnimData Enemy::_anim_data[] = {
     ANIMDATA(_idle)
 };
-Enemy::Enemy(const CVector2D& pos,bool flip) :Base(eType_Enemy) {
+Enemy::Enemy(const CVector2D& pos,bool flip,int Movetype) :Base(eType_Enemy) {
     m_img.Load("Image/Enemy.png");
     m_pos = pos;
     m_flip = flip;
@@ -18,22 +18,44 @@ Enemy::Enemy(const CVector2D& pos,bool flip) :Base(eType_Enemy) {
     m_img.SetSize(50, 50);
     m_img.SetCenter(25, 25);
 }
-void Enemy::Movepattern()
-{
-
-}
 void Enemy::Update()
 {
+ switch(Movetype){
+     case 0:
+         StateMove0();
+         break;
+     case 1:
+         StateMove1();
+         break;
+
+     case 2:
+         StateMove2();
+         break;
+     case 3:
+         StateMove3();
+         break;
+ }
+}
+void Enemy::StateMove0() {
     const int move_speed = 2;
     if (m_pos.x <= -64) {
         SetKill();
     }
     else {
-    
+        m_pos.x -= move_speed;
+        }
+    }
+void Enemy::StateMove1() {
+    const int move_speed = 2;
+    if (m_pos.x <= -64) {
+        SetKill();
+    }
+    else {
+
         m_pos.x -= move_speed;
         m_pos.y += move_speed_y;
 
-        
+
         if (m_pos.y >= 1000) {
             m_pos.y = 1000;
             move_speed_y *= -1;
@@ -45,6 +67,13 @@ void Enemy::Update()
     }
 }
 
+void Enemy::StateMove2() {
+
+}
+
+void Enemy::StateMove3() {
+
+}
 void Enemy::Collision(Base* b)
 {
     switch (b->m_type)
