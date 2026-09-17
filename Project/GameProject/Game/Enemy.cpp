@@ -69,7 +69,7 @@ void Enemy::StateMove1() {
 
 void Enemy::StateMove2() {
     move_speed_y = 0;
-    int i=0;
+    int i = 0;
     if (m_pos.x <= -64) {
         SetKill();
     }
@@ -85,6 +85,7 @@ void Enemy::StateMove2() {
     }
 
 void Enemy::StateMove3() {
+    move_speed_y = 2;
     if (m_pos.x <= -64) {
         SetKill();
     }
