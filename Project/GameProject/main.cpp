@@ -178,23 +178,23 @@ void Init(void)
 
 	// 縦　行　　横　列
 
-	for (int i = 0; i < 2; i++) {
-		for (int j = 0; j < 2; j++) {
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
 			new Enemy(CVector2D(1900 + (80 * j), 400 + (32 * i)), true ,0);
 		}
 	}
-	for (int i = 0; i < 2; i++) {
-		for (int j = 0; j < 2; j++) {
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
 			new Enemy(CVector2D(1900 + (80 * j), 300 + (32 * i)), true, 1);
 		}
 	}
-	for (int i = 0; i < 2; i++) {
-		for (int j = 0; j < 2; j++) {
-			new Enemy(CVector2D(1900 + (80 * j), 900 + (32 * i)), true, 2);
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			new Enemy(CVector2D(1900 + (80 * j), 700 + (32 * i)), true, 2);
 		}
 	}
-	for (int i = 0; i < 2; i++) {
-		for (int j = 0; j < 2; j++) {
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
 			new Enemy(CVector2D(900 + (80 * j), 0 + (32 * i)), true, 3);
 		}
 	}
