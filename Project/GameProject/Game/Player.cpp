@@ -1,18 +1,17 @@
 #include "Player.h"
 #include "Bullet.h"
 #include "Enemy.h"
+#include "Effect.h"
 
 #define MUTEKI 1.0f
 
 static TexAnim _Right[] =
 {
     { 0,2 },
-    { 1,2 }
 };
 static TexAnim _left[] =
 {
     { 3,2 },
-    { 4,2 }
 };
 static TexAnim _stillness[] =
 {
@@ -48,6 +47,7 @@ void Player::TakeDamage(int damage)
     m_muteki_cnt = MUTEKI;
     if (m_hp <= 0) {
         SetKill();
+        new Effect(m_pos);
     }
 
 }
@@ -92,27 +92,24 @@ void Player::Draw()
 
 void Player::StateStillness()
 {
-    const int move_speed = 8;
+    int Animu = eAnimStillness;
+    const int move_speed = 4;
 
     if (PUSH(CInput::eButton1)) 
     {
         new Bullet(m_pos);
     }
-    if 
-        (HOLD(CInput::eUp)) 
+    if (HOLD(CInput::eUp)) 
     {
         m_pos.y -= move_speed;
-        m_state = eState_Right;
+        Animu = eAnimRight;
     }
-    else if
-        (HOLD(CInput::eDown)) {
+    else if (HOLD(CInput::eDown)) 
+    {
         m_pos.y += move_speed;
-        m_state = eState_left;
+        Animu = eAnimleft;
     }
-    
-    else {
-        m_img.ChangeAnimation(eAnimStillness);
-    }
+    m_img.ChangeAnimation(Animu);
 }
 void Player::StateRight() 
 {

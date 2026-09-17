@@ -5,7 +5,7 @@
 #include "Game/Game.h"
 #include "Result/Result.h"
 #include "Title/Title.h"
-
+#include "Game/Effect.h"
 void MainLoop(void) {
 	//--------------------------------------------------------------
 	//ÉQÅ[ÉÄíÜÇÃìÆÇ´ÇÕÇ±Ç±Ç…èëÇ≠
@@ -139,7 +139,12 @@ void Init(void)
 	ADD_RESOURCE("hp80", CImage::CreateImage("Image/hp80.png"));
 	ADD_RESOURCE("hp90", CImage::CreateImage("Image/hp90.png"));
 	ADD_RESOURCE("hp100", CImage::CreateImage("Image/hp100.png"));
+
+	new HP();
+	ADD_RESOURCE("Effect", CImage::CreateImage("Image/Effect.png", Effect::_anim_data, 64, 64));
+
 	
+
 
 
 
