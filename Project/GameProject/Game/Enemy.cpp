@@ -47,16 +47,13 @@ void Enemy::Update()
 
 void Enemy::Collision(Base* b)
 {
-    //敵がプレイヤーに攻撃したときにプレイヤーにダメージを与えるプログラム
+    //敵がプレイヤーに攻撃したときにプレイヤーにダメージを与えるプログラムを作れ
     switch (b->m_type)
     {
     case eType_Player:
-
         if (Player* e = dynamic_cast<Player*>(b)) {
             if (Base::CollisionRect(this, b)) {
-                e->TakeDamage(10);
                 SetKill();
-                //m_attack = false;
             }
         }
         break;
