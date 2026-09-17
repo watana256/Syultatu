@@ -96,8 +96,8 @@ void Init(void)
 	ADD_RESOURCE("Result", CImage::CreateImage("Image/Result.png"));
 	//new Result();
 
-	new Game();
-
+	//new Game();
+	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/BackGround.png"));
 
 
 
