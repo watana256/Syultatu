@@ -29,8 +29,6 @@ void Enemy::Update()
         SetKill();
     }
     else {
-
-
     
         m_pos.x -= move_speed;
         m_pos.y += move_speed_y;
@@ -44,6 +42,25 @@ void Enemy::Update()
             m_pos.y = 64;
             move_speed_y *= -1;
         }
+    }
+}
+
+void Enemy::Collision(Base* b)
+{
+    //敵がプレイヤーに攻撃したときにプレイヤーにダメージを与えるプログラム
+    switch (b->m_type)
+    {
+    case eType_Player:
+
+        if (Player* e = dynamic_cast<Player*>(b)) {
+            if (Base::CollisionRect(this, b)) {
+                e->TakeDamage(10);
+                SetKill();
+                //m_attack = false;
+
+            }
+        }
+        break;
     }
 }
 
