@@ -1,8 +1,10 @@
 #include "Base/Base.h"
 #include "Game/Player.h"
 #include "Game/Enemy.h"
-#include "Title/Title.h"
 #include "Game/HP.h"
+#include "Game/Game.h"
+#include "Result/Result.h"
+#include "Title/Title.h"
 
 void MainLoop(void) {
 	//--------------------------------------------------------------
@@ -91,8 +93,10 @@ void Init(void)
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 	//new Title();
 
+	ADD_RESOURCE("Result", CImage::CreateImage("Image/Result.png"));
+	//new Result();
 
-
+	new Game();
 
 
 
