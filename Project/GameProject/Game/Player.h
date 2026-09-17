@@ -5,17 +5,36 @@ class Player : public Base
 {
 private:
 	enum {
-		eStae_Right,
-		eStae_left,
-		eStae_stillness
+		eState_Right,
+		eState_left,
+		eState_Stillness
 	};
+	int m_state;
 	CImage m_img;
+	int m_hp;
 
-	void StateMove();
+	enum {
+		eAnimRight,
+		eAnimleft,
+		eAnimStillness,
+	};
+	void StateStillness();
+	void StateRight();
+	void Stateleft();
 
 public:
 	Player(const CVector2D& pos);
 	static TexAnimData _anim_data[];
 	void Update();
 	void Draw();
+	void TakeDamage(int damage);
+	int Gethp()
+	{
+		return m_hp;
+
+	}
+	int Getmaxhp() 
+	{
+		return 100;
+	}
 };
