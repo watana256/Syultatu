@@ -6,7 +6,7 @@ public:
 	CImage m_img;
 	int result;
 	int m_cnt;
-	Result(const CVector2D& p);
+	Result();
 	void Update();
 	void Draw();
 };
