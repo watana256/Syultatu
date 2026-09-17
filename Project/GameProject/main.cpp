@@ -190,7 +190,7 @@ void Init(void)
 	}
 	for (int i = 0; i < 2; i++) {
 		for (int j = 0; j < 2; j++) {
-			new Enemy(CVector2D(1900 + (80 * j), 600 + (32 * i)), true, 2);
+			new Enemy(CVector2D(1900 + (80 * j), 900 + (32 * i)), true, 2);
 		}
 	}
 	for (int i = 0; i < 2; i++) {
