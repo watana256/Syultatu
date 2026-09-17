@@ -91,7 +91,6 @@ void Init(void)
 	//------------------------•½ŽR-------------------------
 	
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
-	//new Title();
 
 	ADD_RESOURCE("Result", CImage::CreateImage("Image/Result.png"));
 	//new Result();
@@ -100,7 +99,8 @@ void Init(void)
 	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/BackGround.png"));
 
 	ADD_RESOURCE("Score", CImage::CreateImage("Image/Score.png"));
-	new Game();
+	//new Game();
+	new Title();
 
 
 
