@@ -5,6 +5,8 @@ Game::Game():Base(eType_Scene)
 	,m_step(0)
 	
 {
+	m_BackGround = COPY_RESOURCE("BackGround", CImage);
+	m_BackGround.SetSize(1920, 1080);
 }
 
 Game::~Game()
@@ -27,13 +29,13 @@ void Game::Update()
 
 	}
 				
-	/*if (m_cnt++ > 60 && PUSH(CInput::eButton5)) {
+	if (m_cnt++ > 60 && PUSH(CInput::eButton5)) {
  		Base::KillAll();
 		new Result();
-	}*/
+	}
 }
 
 void Game::Draw()
 {
-
+	m_BackGround.Draw();
 }
