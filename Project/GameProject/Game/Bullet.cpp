@@ -1,4 +1,5 @@
 #include "Bullet.h"
+#include "Score.h"
 
 Bullet::Bullet(const CVector2D& pos) :Base(eType_Bullet)
 {
@@ -31,6 +32,7 @@ void Bullet::Collision(Base* b)
         {
             b->SetKill();
             SetKill();
+            Score::s_score += 100;
         }
         break;
     }

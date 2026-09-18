@@ -4,9 +4,10 @@
 class Score : public Base {
 public:
     CImage m_img;
-    int m_score;
     CFont* m_font;
 public:
     Score();
+    static int s_score;
+    void Update();
     void Draw();
 };
