@@ -96,7 +96,7 @@ void Player::StateStillness()
     int Animu = eAnimStillness;
     const int move_speed = 4;
 
-    if (PUSH(CInput::eButton1)) 
+    if (HOLD(CInput::eButton1))
     {
         new Bullet(m_pos);
         SOUND("SE_Bullet")->Play();
