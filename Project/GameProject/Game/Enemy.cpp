@@ -11,14 +11,16 @@ static TexAnim _idle[] = {
 TexAnimData Enemy::_anim_data[] = {
     ANIMDATA(_idle)
 };
-Enemy::Enemy(const CVector2D& pos,bool flip,int movetype) :Base(eType_Enemy) {
+Enemy::Enemy(const CVector2D& pos,bool flip,int movetype, float Speed_x, float Speed_y) :Base(eType_Enemy) {
     m_img.Load("Image/Enemy.png");
     m_pos = pos;
     m_flip = flip;
     m_rad = 25;
     m_img.SetSize(50, 50);
     m_img.SetCenter(25, 25);
-    m_movetype= movetype;
+    m_movetype= movetype;    
+    m_speed_x = Speed_x;
+    m_speed_y = Speed_y;
 }
 void Enemy::Update()
 {
@@ -51,75 +53,75 @@ void Enemy::StateMove0() {
         SetKill();
     }
     else {
-        m_pos.x -= move_speed_x;
+        m_pos.x -= m_speed_x;
         }
     }
+
+
 void Enemy::StateMove1() {
     if (m_pos.x <= -64) {
         SetKill();
     }
     else {
 
-        m_pos.x -= move_speed_x;
-        m_pos.y += move_speed_y;
 
+        if (m_pos.y <= 150||m_pos.y >= 1000) {
+            m_speed_y *= -1;
+        }
 
-        if (m_pos.y >= 1000) {
-            m_pos.y = 1000;
-            move_speed_y *= -1;
-        }
-        else if (m_pos.y <= 150) {
-            m_pos.y = 150;
-            move_speed_y *= -1;
-        }
+        m_pos.x -= m_speed_x;
+        m_pos.y -= m_speed_y;
     }
 }
 
 void Enemy::StateMove2() {
-    move_speed_y = 0;
-    move_speed_x = 2;
+    m_speed_x = 2;
+    m_pos.x -= m_speed_x;
+    m_speed_y = 0;
+    m_pos.y -= m_speed_y;
     if (m_pos.x <= -64) {
         SetKill();
     }
     else {
 
             if (m_pos.x <= 1200) {
-                move_speed_y= 4;
-                move_speed_x= 7;
+                m_speed_y = 4;
+                m_speed_x = 7;
             }
 
-            m_pos.y -= move_speed_y;
-            m_pos.x -= move_speed_x;
+            m_pos.y -= m_speed_y;
+            m_pos.x -= m_speed_x;
         }
     }
 
 void Enemy::StateMove22() {
-    move_speed_y = 0;
-    move_speed_x = 2;
+    m_speed_x = 2;
+    m_pos.x -= m_speed_x;
+    m_speed_y = 0;
+    m_pos.y -= m_speed_y;
     if (m_pos.x <= -64) {
         SetKill();
     }
     else {
 
         if (m_pos.x <= 1200) {
-            move_speed_y = -4;
-            move_speed_x = 7;
+            m_speed_y = -4;
+            m_speed_x = 7;
         }
 
-        m_pos.y -= move_speed_y;
-        m_pos.x -= move_speed_x;
+        m_pos.y -= m_speed_y;
+        m_pos.x -= m_speed_x;
     }
 }
 
 void Enemy::StateMove3() {
-    move_speed_y = 2;
     if (m_pos.x <= -64) {
         SetKill();
     }
     else {
 
-        m_pos.y += move_speed_y;
-        m_vec.y += move_speed_y;
+    m_pos.y += m_speed_y;
+    m_vec.y += m_speed_y;
     }
 }
 

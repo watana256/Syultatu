@@ -12,16 +12,16 @@ private:
         eState_Idle,
     };
     int m_movetype;
+    int m_speed_x;
+    int m_speed_y;
     void StateMove0();
     void StateMove1();
     void StateMove2();
     void StateMove22();
     void StateMove3();
 public:
-    Enemy(const CVector2D& pos, bool flip,int Movetype);
+    Enemy(const CVector2D& pos, bool flip,int Movetype,float Speed_x, float Speed_y);
     CImage m_img;
-    float move_speed_y = 4.0f;
-    float move_speed_x = 1.0f;
 
     bool m_flip;
     void Update();
