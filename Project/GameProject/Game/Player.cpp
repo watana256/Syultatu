@@ -4,6 +4,7 @@
 #include "Effect.h"
 
 #define MUTEKI 1.0f
+#define ATTACK_TIME 0.19f
 
 static TexAnim _Right[] =
 {
@@ -28,6 +29,7 @@ TexAnimData Player::_anim_data[] =
 Player::Player(const CVector2D& pos) 
     :Base(eType_Player)
     , m_muteki_cnt(0)
+    , m_attack_cnt(0)
 {
 	m_img = COPY_RESOURCE("Player", CImage);
     m_pos_old = m_pos = pos;
@@ -81,6 +83,7 @@ void Player::Update()
     if (m_pos.y >   1000) {
         m_pos.y =   1000;
     }
+    m_attack_cnt += CFPS::GetDeltaTime();
 }
 void Player::Draw()
 {
@@ -96,10 +99,14 @@ void Player::StateStillness()
     int Animu = eAnimStillness;
     const int move_speed = 4;
 
-    if (PUSH(CInput::eButton1)) 
+    if (HOLD(CInput::eButton1)) 
     {
-        new Bullet(m_pos);
-        SOUND("SE_Bullet")->Play();
+        if (m_attack_cnt > ATTACK_TIME)
+        {
+            m_attack_cnt = 0;
+            new Bullet(m_pos);
+            SOUND("SE_Bullet")->Play();
+        }
     }
     if (HOLD(CInput::eUp)) 
     {

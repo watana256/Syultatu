@@ -7,7 +7,7 @@
 #include "Result/Result.h"
 #include "Title/Title.h"
 
-#define RESULT_TIME 30.0f
+#define RESULT_TIME 31.0f
 
 Game::Game():Base(eType_Scene)
 	,m_step(0)
