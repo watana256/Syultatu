@@ -33,6 +33,7 @@ void Bullet::Collision(Base* b)
             b->SetKill();
             SetKill();
             Score::s_score += 100;
+            SOUND("SE_Explosion")->Play();
         }
         break;
     }
