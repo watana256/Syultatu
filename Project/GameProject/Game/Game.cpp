@@ -7,11 +7,12 @@
 #include "Result/Result.h"
 #include "Title/Title.h"
 
-#define RESULT_TIME 5.0f
+#define RESULT_TIME 30.0f
 
 Game::Game():Base(eType_Scene)
 	,m_step(0)
 	,m_cnt(0)
+	,m_deathCnt(0)
 	
 {
 	m_BackGround = COPY_RESOURCE("BackGround", CImage);
@@ -190,7 +191,7 @@ void Game::Update()
 	switch (m_step)
 	{
 	case 0:// ゲーム開始する
-		   // PlayerやEnemyの出現
+		// PlayerやEnemyの出現
 	{
 		new Player(CVector2D(72, 800));
 		new HP();
@@ -200,14 +201,26 @@ void Game::Update()
 	}
 	case 1:// リザルトへ
 	{
-		if (m_cnt > RESULT_TIME)
+		if (Base* player = Base::FindObject(eType_Player))
 		{
-			Base::KillAll();
-			new Result();
-			break;
+			if (m_cnt > RESULT_TIME)
+			{
+				Base::KillAll();
+				new Result();
+				break;
+			}
+		}
+		else
+		{
+			if (m_deathCnt > 1.3f)
+			{
+				Base::KillAll();
+				new Result();
+				break;
+			}
+			m_deathCnt += CFPS::GetDeltaTime();
 		}
 	}
-
 	}
 	m_cnt += CFPS::GetDeltaTime();
 }
