@@ -44,6 +44,9 @@ void Enemy::Update()
      case 3:
          StateMove3();
          break;
+     case 30:
+         StateMove30();
+         break;
  }
 }
 
@@ -116,13 +119,24 @@ void Enemy::StateMove22() {
 }
 
 void Enemy::StateMove3() {
-    if (m_pos.x <= -64) {
+    if (m_pos.y >= 2000) {
         SetKill();
     }
     else {
 
     m_pos.y += m_speed_y;
     m_vec.y += m_speed_y;
+    }
+}
+
+void Enemy::StateMove30() {
+    if (m_pos.y <= -100) {
+        SetKill();
+    }
+    else {
+
+        m_pos.y -= m_speed_y;
+        m_vec.y -= m_speed_y;
     }
 }
 
@@ -157,5 +171,5 @@ void Enemy::Draw()
     m_img.SetPos(GetScreenPos(m_pos));
     m_img.SetFlipH(m_flip);
     m_img.Draw();
-    Utility::DrawCircle(m_pos, m_rad, CVector4D(5, 0, 0, 0.5));
+    //Utility::DrawCircle(m_pos, m_rad, CVector4D(5, 0, 0, 0.5));
 }

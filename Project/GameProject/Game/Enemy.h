@@ -19,6 +19,8 @@ private:
     void StateMove2();
     void StateMove22();
     void StateMove3();
+    void StateMove30();
+
 public:
     Enemy(const CVector2D& pos, bool flip,int Movetype,float Speed_x, float Speed_y);
     CImage m_img;
