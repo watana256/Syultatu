@@ -17,7 +17,7 @@ Effect::Effect(const CVector2D& pos) :Base(eType_Effect)
     m_pos = pos;
     m_img.SetSize(128, 128);
     m_img.SetCenter(64, 64);
-    //////////////m_img.ChangeAnimation(0, false);
+    m_img.ChangeAnimation(0, false);
 
 }
 void Effect::Update()
