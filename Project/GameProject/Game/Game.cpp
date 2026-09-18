@@ -22,7 +22,6 @@ void Game::EnemyArmy()
 {
 	// 縦　行　　横　列
 
-
 	// Enemy P0
 	
 	// ?:敵の出てくるスピードどうしたら？
@@ -34,34 +33,51 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(1900 + (80 * j), 400 + (32 * i)), true, 0, 11.0, 6.0);
+			new Enemy(CVector2D(1900 + (80 * j), 400 + (32 * i)), true, 0, 3.0, 0.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2300 + (80 * j), 600 + (32 * i)), true, 0, 13.0, 4.0);
+			new Enemy(CVector2D(2500 + (80 * j), 600 + (32 * i)), true, 0, 3.5, 0.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2700 + (80 * j), 500 + (32 * i)), true, 0, 8.0, 4.0);
+			new Enemy(CVector2D(3100 + (80 * j), 500 + (32 * i)), true, 0, 4.0, 0.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(3100 + (80 * j), 200 + (32 * i)), true, 0, 9.0, 4.0);
+			new Enemy(CVector2D(3700 + (80 * j), 200 + (32 * i)), true, 0, 4.0, 0.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(3700 + (80 * j), 800 + (32 * i)), true, 0, 17.0, 4.0);
+			new Enemy(CVector2D(4300 + (80 * j), 800 + (32 * i)), true, 0, 4.5, 0.0);
 		}
 	}
 
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			new Enemy(CVector2D(5000 + (80 * j), 500 + (32 * i)), true, 0, 4.6, 0.0);
+		}
+	}
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			new Enemy(CVector2D(5700 + (80 * j), 300 + (32 * i)), true, 0, 5.0, 0.0);
+		}
+	}
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			new Enemy(CVector2D(6400 + (80 * j), 600 + (32 * i)), true, 0, 5.0, 0.0);
+		}
+	}
 
 	// Enemy P1
 	// 上下に動くやつ
@@ -71,27 +87,34 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(1900 + (80 * j), 300 + (32 * i)), true, 1, 4.0, 4.0);
+			new Enemy(CVector2D(2500 + (80 * j), 300 + (32 * i)), true, 1, 2.5, 4.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2300 + (80 * j), 800 + (32 * i)), true, 1, 8.0, 4.0);
+			new Enemy(CVector2D(3400 + (80 * j), 800 + (32 * i)), true, 1, 2.5, 4.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2700 + (80 * j), 500 + (32 * i)), true, 1, 5.0, 4.0);
+			new Enemy(CVector2D(4300 + (80 * j), 500 + (32 * i)), true, 1, 3.0, 4.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(3100 + (80 * j), 400 + (32 * i)), true, 1, 15.0, 4.0);
+			new Enemy(CVector2D(5200 + (80 * j), 400 + (32 * i)), true, 1, 3.5, 4.0);
 		}
 	}
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			new Enemy(CVector2D(6100 + (80 * j), 800 + (32 * i)), true, 1, 3.5, 4.0);
+		}
+	}
+
 
 	// Enemy P2
 	// 途中で向きとスピードが変わるやつ
@@ -104,7 +127,7 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(1900 + (80 * j), 800 + (32 * i)), true, 2, 4.0, 0.0);
+			new Enemy(CVector2D(2300 + (80 * j), 800 + (32 * i)), true, 2, 4.0, 0.0);
 		}
 	}
 
@@ -112,7 +135,7 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2300 + (80 * j), 200 + (32 * i)), true, 22, 4.0, 0.0);
+			new Enemy(CVector2D(3200 + (80 * j), 200 + (32 * i)), true, 22, 4.0, 0.0);
 		}
 	}
 
@@ -120,7 +143,7 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2700 + (80 * j), 800 + (32 * i)), true, 2, 4.0, 0.0);
+			new Enemy(CVector2D(4100 + (80 * j), 800 + (32 * i)), true, 2, 5.0, 0.0);
 		}
 	}
 
@@ -128,7 +151,7 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(3100 + (80 * j), 200 + (32 * i)), true, 22, 4.0, 0.0);
+			new Enemy(CVector2D(5000 + (80 * j), 200 + (32 * i)), true, 22, 6.0, 0.0);
 		}
 	}
 
@@ -138,15 +161,24 @@ void Game::EnemyArmy()
 	// !:新しいパターンを作る場合、13 23とする
  
 	// ?:敵が降りてくるのは固定でいいのか？
-	// ?:団体か、個別か　話す
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(900 + (80 * j), -100 + (32 * i)), true, 3, 4.0, 4.0);
+			new Enemy(CVector2D(900 + (80 * j), -1000 + (32 * i)), true, 3, 0.0, 2.0);
 		}
 	}
 
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			new Enemy(CVector2D(900 + (80 * j), -2700 + (32 * i)), true, 3, 0.0, 3.0);
+		}
+	}
 
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			new Enemy(CVector2D(900 + (80 * j), -4400 + (32 * i)), true, 3, 0.0, 4.0);
+		}
+	}
 }
 
 void Game::Update()
