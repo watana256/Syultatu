@@ -99,6 +99,7 @@ void Player::StateStillness()
     if (PUSH(CInput::eButton1)) 
     {
         new Bullet(m_pos);
+        SOUND("SE_Bullet")->Play();
     }
     if (HOLD(CInput::eUp)) 
     {
