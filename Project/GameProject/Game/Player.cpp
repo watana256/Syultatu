@@ -48,6 +48,7 @@ void Player::TakeDamage(int damage)
     if (m_hp <= 0) {
         SetKill();
         new Effect(m_pos);
+        SOUND("SE_Explosion")->Play();
     }
 
 }

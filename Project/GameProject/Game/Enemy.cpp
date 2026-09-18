@@ -142,7 +142,7 @@ void Enemy::Collision(Base* b)
 
                 // 2. “G©g‚ğÁ‹‚·‚é
                 SetKill();
-
+                
             }
         }
         break;
