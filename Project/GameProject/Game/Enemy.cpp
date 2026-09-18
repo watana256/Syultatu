@@ -156,7 +156,7 @@ void Enemy::Collision(Base* b)
 
                 // 2. “GŽ©g‚ðÁ‹Ž‚·‚é
                 SetKill();
-                
+                SOUND("SE_Explosion")->Play();
             }
         }
         break;
