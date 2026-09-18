@@ -99,6 +99,7 @@ void Player::StateStillness()
     int Animu = eAnimStillness;
     const int move_speed = 4;
 
+
     if (HOLD(CInput::eButton1)) 
     {
         if (m_attack_cnt > ATTACK_TIME)
