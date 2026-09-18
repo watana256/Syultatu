@@ -5,7 +5,7 @@ static TexAnim _effect_bomb[] = {
             { 0,10 },
             { 1,5 },
             { 2,5 },
-            { 3,5 },
+            { 3,10 },
 };
 TexAnimData Effect::_anim_data[] = {
         ANIMDATA(_effect_bomb),
