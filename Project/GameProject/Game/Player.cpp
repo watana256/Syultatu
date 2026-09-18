@@ -48,6 +48,7 @@ void Player::TakeDamage(int damage)
     if (m_hp <= 0) {
         SetKill();
         new Effect(m_pos);
+        SOUND("SE_Explosion")->Play();
     }
 
 }
@@ -87,7 +88,7 @@ void Player::Draw()
 	m_img.Draw();
 	DrawRect();
     m_img.SetRect(128, 0, 192, 64);
-    Utility::DrawCircle(m_pos, m_rad, CVector4D(0, 0, 1, 0.5));
+    //Utility::DrawCircle(m_pos, m_rad, CVector4D(0, 0, 1, 0.5));
 }
 
 void Player::StateStillness()
