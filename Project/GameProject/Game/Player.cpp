@@ -75,8 +75,8 @@ void Player::Update()
         m_muteki_cnt -= CFPS::GetDeltaTime();
     }
 
-    if (m_pos.y < 150) {
-        m_pos.y = 150;
+    if (m_pos.y < 130) {
+        m_pos.y = 130;
     }
     if (m_pos.y >   1000) {
         m_pos.y =   1000;
