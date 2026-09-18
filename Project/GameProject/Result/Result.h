@@ -4,6 +4,7 @@
 class Result : public Base {
 public:
 	CImage m_img;
+	CImage m_score;
 	int result;
 	int m_cnt;
 	Result();

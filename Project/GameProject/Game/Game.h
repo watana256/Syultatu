@@ -4,7 +4,8 @@
 class Game : public Base {
 private:
 	CImage m_BackGround;
-	int m_cnt;
+	float m_cnt;
+	float m_deathCnt;
 	int m_score;
 public:
 	Game();

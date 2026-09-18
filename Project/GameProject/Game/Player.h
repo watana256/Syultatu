@@ -13,6 +13,7 @@ private:
 	CImage m_img;
 	int m_hp;
 	int m_muteki_cnt;
+	float m_attack_cnt;
 
 	enum {
 		eAnimRight,

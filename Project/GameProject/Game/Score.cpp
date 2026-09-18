@@ -5,7 +5,6 @@ int Score::s_score = 0;
 Score::Score():Base(eType_UI)
 {
 	m_img = COPY_RESOURCE("Score", CImage);
-	m_img.SetSize(1920, 1080);
 	Score::s_score = 0;
 }
 
