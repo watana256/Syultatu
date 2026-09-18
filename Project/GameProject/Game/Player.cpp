@@ -75,8 +75,8 @@ void Player::Update()
         m_muteki_cnt -= CFPS::GetDeltaTime();
     }
 
-    if (m_pos.y < 150) {
-        m_pos.y = 150;
+    if (m_pos.y < 130) {
+        m_pos.y = 130;
     }
     if (m_pos.y >   1000) {
         m_pos.y =   1000;
@@ -99,6 +99,7 @@ void Player::StateStillness()
     if (PUSH(CInput::eButton1)) 
     {
         new Bullet(m_pos);
+        SOUND("SE_Bullet")->Play();
     }
     if (HOLD(CInput::eUp)) 
     {

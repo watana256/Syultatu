@@ -144,7 +144,7 @@ void Init(void)
 	ADD_RESOURCE("Effect", CImage::CreateImage("Image/Effect.png", Effect::_anim_data, 64, 64));
 
 	SOUND("SE_Explosion")->Load("Sound/SE/Explosion.mp3", 1);
-
+	SOUND("SE_Bullet")->Load("Sound/SE/Bullet.mp3", 1);
 
 
 
