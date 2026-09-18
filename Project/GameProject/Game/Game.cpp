@@ -2,6 +2,7 @@
 #include "Game/Player.h"
 #include "Game/Enemy.h"
 #include "Game/HP.h"
+#include "Game/Score.h"
 #include "Game/Game.h"
 #include "Result/Result.h"
 #include "Title/Title.h"
@@ -208,5 +209,10 @@ void Game::Update()
 
 void Game::Draw()
 {
+	/*int score = GameData::s\_score; for (int i = 0; i & lt; 8; i++, score /= 10) 
+	{
+		int s = score % 10;
+		m_img.SetRect(16  * s, 16, 16  * s + 16, 32); m_img.SetSize(16, 16); m_img.SetPos(200 - 16  * i, 0);
+		m_img.Draw();*/
 	m_BackGround.Draw();
 }

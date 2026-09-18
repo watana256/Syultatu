@@ -7,6 +7,7 @@ public:
     CFont* m_font;
 public:
     Score();
-    int m_score;
+    static int s_score;
+    void Update();
     void Draw();
 };

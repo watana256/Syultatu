@@ -142,7 +142,6 @@ void Enemy::Collision(Base* b)
 
                 // 2. “G©g‚ğÁ‹‚·‚é
                 SetKill();
-                Score::m_score
 
             }
         }
