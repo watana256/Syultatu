@@ -34,31 +34,31 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(1900 + (80 * j), 400 + (32 * i)), true, 0);
+			new Enemy(CVector2D(1900 + (80 * j), 400 + (32 * i)), true, 0, 11.0, 6.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2300 + (80 * j), 600 + (32 * i)), true, 0);
+			new Enemy(CVector2D(2300 + (80 * j), 600 + (32 * i)), true, 0, 13.0, 4.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2700 + (80 * j), 500 + (32 * i)), true, 0);
+			new Enemy(CVector2D(2700 + (80 * j), 500 + (32 * i)), true, 0, 8.0, 4.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(3100 + (80 * j), 200 + (32 * i)), true, 0);
+			new Enemy(CVector2D(3100 + (80 * j), 200 + (32 * i)), true, 0, 9.0, 4.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(3700 + (80 * j), 800 + (32 * i)), true, 0);
+			new Enemy(CVector2D(3700 + (80 * j), 800 + (32 * i)), true, 0, 17.0, 4.0);
 		}
 	}
 
@@ -71,25 +71,25 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(1900 + (80 * j), 300 + (32 * i)), true, 1);
+			new Enemy(CVector2D(1900 + (80 * j), 300 + (32 * i)), true, 1, 4.0, 4.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2300 + (80 * j), 800 + (32 * i)), true, 1);
+			new Enemy(CVector2D(2300 + (80 * j), 800 + (32 * i)), true, 1, 8.0, 4.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2700 + (80 * j), 500 + (32 * i)), true, 1);
+			new Enemy(CVector2D(2700 + (80 * j), 500 + (32 * i)), true, 1, 5.0, 4.0);
 		}
 	}
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(3100 + (80 * j), 400 + (32 * i)), true, 1);
+			new Enemy(CVector2D(3100 + (80 * j), 400 + (32 * i)), true, 1, 15.0, 4.0);
 		}
 	}
 
@@ -104,7 +104,7 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(1900 + (80 * j), 800 + (32 * i)), true, 2);
+			new Enemy(CVector2D(1900 + (80 * j), 800 + (32 * i)), true, 2, 4.0, 0.0);
 		}
 	}
 
@@ -112,7 +112,7 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2300 + (80 * j), 200 + (32 * i)), true, 22);
+			new Enemy(CVector2D(2300 + (80 * j), 200 + (32 * i)), true, 22, 4.0, 0.0);
 		}
 	}
 
@@ -120,7 +120,7 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(2700 + (80 * j), 800 + (32 * i)), true, 2);
+			new Enemy(CVector2D(2700 + (80 * j), 800 + (32 * i)), true, 2, 4.0, 0.0);
 		}
 	}
 
@@ -128,7 +128,7 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(3100 + (80 * j), 200 + (32 * i)), true, 22);
+			new Enemy(CVector2D(3100 + (80 * j), 200 + (32 * i)), true, 22, 4.0, 0.0);
 		}
 	}
 
@@ -142,7 +142,7 @@ void Game::EnemyArmy()
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			new Enemy(CVector2D(900 + (80 * j), -100 + (32 * i)), true, 3);
+			new Enemy(CVector2D(900 + (80 * j), -100 + (32 * i)), true, 3, 4.0, 4.0);
 		}
 	}
 
