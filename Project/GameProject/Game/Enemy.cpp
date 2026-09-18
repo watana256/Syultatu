@@ -1,5 +1,6 @@
 #include "Enemy.h"
 #include "Player.h"
+#include "Score.h"
 static TexAnim _idle[] = {
     { 0,2 },
     { 1,2 },
@@ -139,6 +140,8 @@ void Enemy::Collision(Base* b)
 
                 // 2. “G©g‚ğÁ‹‚·‚é
                 SetKill();
+                Score::m_score
+
             }
         }
         break;

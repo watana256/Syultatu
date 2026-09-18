@@ -8,7 +8,7 @@ Score::Score():Base(eType_UI)
 
 void Score::Draw()
 {
-	int score = 100;
+	int score = m_score;
 	for (int i = 0; i < 6; i++, score /= 10) {
 		int s = score % 10;
 		m_img.SetRect(100 * s, 0, 100 * s + 100, 128);
